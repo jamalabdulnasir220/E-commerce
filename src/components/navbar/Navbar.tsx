@@ -1,12 +1,13 @@
 import logo from "../assets/logo.png";
 import cart_icon from "../assets/cart_icon.png";
 import { useState } from "react";
+import { Link } from "react-router";
 
 const Navbar = () => {
   const [menu, setMenu] = useState("shop");
 
   return (
-    <div className="flex justify-around p-[16px] shadow-sm shadow-black">
+    <div className="font-poppins flex justify-around p-[16px] shadow-xs shadow-black">
       {/* Logo */}
       <div className="flex items-center gap-[10px]">
         <img src={logo} alt="logo" className="" />
@@ -18,7 +19,7 @@ const Navbar = () => {
           onClick={() => setMenu("shop")}
           className="flex flex-col items-center justify-center gap-[3px] cursor-pointer"
         >
-          Shop{" "}
+          <Link to={"/"}>Shop </Link>
           {menu === "shop" ? (
             <hr className="bg-[#ff4141] h-[3px] border-none w-[80%] rounded-[10px]" />
           ) : (
@@ -29,7 +30,7 @@ const Navbar = () => {
           onClick={() => setMenu("mens")}
           className="flex flex-col items-center justify-center gap-[3px] cursor-pointer"
         >
-          Men
+          <Link to={"/men"}>Men </Link>
           {menu === "mens" ? (
             <hr className="bg-[#ff4141] h-[3px] border-none w-[80%] rounded-[10px]" />
           ) : (
@@ -40,7 +41,7 @@ const Navbar = () => {
           onClick={() => setMenu("womens")}
           className="flex flex-col items-center justify-center gap-[3px] cursor-pointer"
         >
-          Women
+          <Link to={"/women"}>Women </Link>
           {menu === "womens" ? (
             <hr className="bg-[#ff4141] h-[3px] border-none w-[80%] rounded-[10px]" />
           ) : (
@@ -51,7 +52,7 @@ const Navbar = () => {
           onClick={() => setMenu("kids")}
           className="flex flex-col items-center justify-center gap-[3px] cursor-pointer"
         >
-          Kids
+          <Link to={"/kids"}>Kids </Link>
           {menu === "kids" ? (
             <hr className="bg-[#ff4141] h-[3px] border-none w-[80%] rounded-[10px]" />
           ) : (
@@ -61,10 +62,15 @@ const Navbar = () => {
       </ul>
       {/* log in */}
       <div className="flex items-center gap-[45px]">
-        <button className="w-[157px] h-[58px] outline-none border border-[#7a7a7a] rounded-[75px] text-[#515151] text-[20px] font-medium bg-white cursor-pointer active:bg-[#f5f5f5]">
-          Login
-        </button>
-        <img src={cart_icon} alt="" />
+        <Link to={"/login"}>
+          {" "}
+          <button className="w-[157px] h-[58px] outline-hidden border border-[#7a7a7a] rounded-[75px] text-[#515151] text-[20px] font-medium bg-white cursor-pointer active:bg-[#f5f5f5]">
+            Login
+          </button>
+        </Link>
+        <Link to={"/cart"}>
+          <img src={cart_icon} alt="cart" />
+        </Link>
         <div className="w-[22px] h-[22px] flex items-center justify-center -mt-[35px] -ml-[55px] rounded-[11px] text-[14px] bg-red-500 text-white">
           0
         </div>
