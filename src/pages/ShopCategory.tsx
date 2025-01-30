@@ -23,8 +23,8 @@ const ShopCategory = ({ category, banner }: PropType) => {
         <p className="">
           <span className="font-semibold">Showing 1 - 12</span> out of 36 Products
         </p>
-        <div className="py-[10px] px-[20px] rounded-[40px] border border-[#888]">
-          Sort by <img src={dropdown_icon} alt="dropdown icon" />
+        <div className="py-[10px] px-[20px] rounded-[40px] border border-[#888] flex items-center justify-center gap-1.5">
+          Sort by <img className="cursor-pointer flex items-center justify-center" src={dropdown_icon} alt="dropdown icon" />
         </div>
       </div>
       {/* shop category products */}
@@ -33,6 +33,7 @@ const ShopCategory = ({ category, banner }: PropType) => {
           item.category === category ? (
             <Item
               key={item.id}
+              id={item.id}
               image={item.image}
               name={item.name}
               oldPrice={item.old_price}

@@ -1,7 +1,7 @@
 import { createContext, ReactNode } from "react";
 import all_product from "../components/assets/all_product";
 
-interface Product {
+export interface Product {
   id: number;
   name: string;
   category: string;

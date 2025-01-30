@@ -11,6 +11,7 @@ const NewCollections = () => {
           return (
             <Item
               key={item.id}
+              id={item.id}
               image={item.image}
               name={item.name}
               oldPrice={item.old_price}
