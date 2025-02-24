@@ -1,7 +1,11 @@
 import start_icon from "../assets/star_icon.png";
 import star_dull from "../assets/star_dull_icon.png";
+import { useContext } from "react";
+import { ShopContext } from "../../context/ShopContext";
 
 const ProductDisplay = ({ product }: any) => {
+  const { addToCart } = useContext(ShopContext);
+
   return (
     <div className="flex  my-0 mx-[170px]">
       {/* LEFT */}
@@ -82,7 +86,10 @@ const ProductDisplay = ({ product }: any) => {
             </div>
           </div>
         </div>
-        <button className="py-[10px] px-[20px] w-[200px] text-base font-semibold text-white bg-[#ff4141] mb-[20px] border-none outline-none cursor-pointer">
+        <button
+          onClick={() => addToCart(product.id)}
+          className="py-[10px] px-[20px] w-[200px] text-base font-semibold text-white bg-[#ff4141] mb-[20px] border-none outline-none cursor-pointer"
+        >
           ADD TO CART
         </button>
         <p className="mt-[5px] ">
