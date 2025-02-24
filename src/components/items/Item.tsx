@@ -12,7 +12,12 @@ const Item = ({ image, name, newPrice, oldPrice, id }: ItemProp) => {
   return (
     <div className="w-[350px] transform transition duration-[600ms] ease-in-out hover:scale-105">
       <Link to={`/product/${id}`}>
-        <img src={image} alt="image" className="object-contain" />
+        <img
+          onClick={() => window.scrollTo({top: 0, behavior: "smooth"})}
+          src={image}
+          alt="image"
+          className="object-contain"
+        />
       </Link>
       <p className="my-[6px] mx-0">{name}</p>
       <div className="flex gap-[20px]">
