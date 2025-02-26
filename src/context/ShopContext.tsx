@@ -80,7 +80,6 @@ const ShopContextProvider: React.FC<ShopContextProviderProps> = ({
     getTotalCartItems
   };
 
-  console.log(getTotalAmount());
 
   return (
     <ShopContext.Provider value={contextValue}>{children}</ShopContext.Provider>
